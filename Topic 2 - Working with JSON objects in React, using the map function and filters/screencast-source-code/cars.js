@@ -1,0 +1,81 @@
+export const cars = [{
+  id: 1,
+  make: "GMC",
+  year: 2012
+}, {
+  id: 2,
+  make: "Volkswagen",
+  year: 2022
+}, {
+  id: 3,
+  make: "Chevrolet",
+  year: 2010
+}, {
+  id: 4,
+  make: "Chevrolet",
+  year: 2017
+}, {
+  id: 5,
+  make: "Mercedes-Benz",
+  year: 2012
+}, {
+  id: 6,
+  make: "Ford",
+  year: 2014
+}, {
+  id: 7,
+  make: "Mazda",
+  year: 2014
+}, {
+  id: 8,
+  make: "Ford",
+  year: 2020
+}, {
+  id: 9,
+  make: "GMC",
+  year: 2015
+}, {
+  id: 10,
+  make: "Porsche",
+  year: 2014
+}, {
+  id: 11,
+  make: "Chevrolet",
+  year: 2011
+}, {
+  id: 12,
+  make: "Chevrolet",
+  year: 2020
+}, {
+  id: 13,
+  make: "Lamborghini",
+  year: 2010
+}, {
+  id: 14,
+  make: "Mazda",
+  year: 2021
+}, {
+  id: 15,
+  make: "Hyundai",
+  year: 2010
+}, {
+  id: 16,
+  make: "Mercury",
+  year: 2016
+}, {
+  id: 17,
+  make: "Subaru",
+  year: 2010
+}, {
+  id: 18,
+  make: "Saturn",
+  year: 2023
+}, {
+  id: 19,
+  make: "Mercury",
+  year: 2013
+}, {
+  id: 20,
+  make: "Dodge",
+  year: 2018
+}];
