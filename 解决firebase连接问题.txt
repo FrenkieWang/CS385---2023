@@ -1,0 +1,29 @@
+
+1）事先安装 npm install firebase
+如果遇到 npm ERR? code ENOTFOUND
+那么安装前，清空代理服务器
+npm config delete proxy
+
+2）Firebase设置过期时间
+打开Firebase控制台
+https://console.firebase.google.com/
+点进项目 -> 选中Authentication -> 选中规则
+修改 timestamp
+
+3）在SignIn.js 的第二行
+import firebaseApp from "./fbconfig";
+firebaseApp两边加花括号 变成
+import {firebaseApp} from "./fbconfig";
+
+
+
+4）解决无法连接到firebase 服务器 could not reach cloud firestore backend.
+https://www.youtube.com/watch?v=hJMubeJXkWc
+在fbconfig.js 文件中
+初始化firestore的时候，设定experimentalForceLongPolling为true
+// const db = getFirestore(firebaseApp, {});
+const db = initializeFirestore(firebaseApp,  
+  {
+      experimentalForceLongPolling:true
+  });
+
