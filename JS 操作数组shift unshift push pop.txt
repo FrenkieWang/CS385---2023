@@ -1,0 +1,31 @@
+在JavaScript中，push(), pop(), unshift(), 和 shift() 都是用于操作数组的方法。
+但它们的作用各不相同。下面是它们各自的用途和区别：
+
+1）push()：
+用途：向数组的末尾添加一个或多个元素。
+返回值：返回新数组的长度。
+let array = [1, 2, 3];
+array.push(4); // array 现在是 [1, 2, 3, 4]
+
+2）pop()：
+用途：删除数组的最后一个元素，并返回被删除的元素。
+返回值：返回被删除的元素。
+let array = [1, 2, 3];
+let lastElement = array.pop(); // lastElement 现在是 3，array 现在是 [1, 2]
+
+3）unshift()：
+用途：向数组的开头添加一个或多个元素。
+返回值：返回新数组的长度。
+let array = [1, 2, 3];
+array.unshift(0); // array 现在是 [0, 1, 2, 3]
+
+4）shift()：
+用途：删除数组的第一个元素，并返回被删除的元素。
+返回值：返回被删除的元素。
+let array = [1, 2, 3];
+let firstElement = array.shift(); // firstElement 现在是 1，array 现在是 [2, 3]
+
+总结一下：
+push() 和 unshift() 用于添加元素到数组的末尾和开头，并返回数组的长度。
+pop() 和 shift() 用于删除数组的末尾和开头的元素，并返回被删除的元素。
+这些方法都会改变原数组，而不是创建一个新数组。

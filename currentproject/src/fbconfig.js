@@ -34,4 +34,5 @@ const db = initializeFirestore(firebaseApp,
   {
       experimentalForceLongPolling : true
   });
+
 export { db, firebaseApp };

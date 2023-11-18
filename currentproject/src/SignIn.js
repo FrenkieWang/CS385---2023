@@ -34,6 +34,7 @@ const SignIn = ({ setTheAuthUser }) => {
         // Obtain the authenticated user object
         // from firebase.
         const user = userCredentials.user;
+        console.log(user);
         // setTheAuthUser from the Parent App.
         // now the parent will know the user is authenticated
         setTheAuthUser(user);

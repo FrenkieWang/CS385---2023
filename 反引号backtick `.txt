@@ -1,0 +1,22 @@
+
+` 是反引号（backtick）的符号，也被称为模板字符串符号。
+
+在 JavaScript 中，反引号用于定义模板字符串。
+模板字符串是一种特殊类型的字符串，它允许你在字符串中插入表达式，并在多行字符串中轻松换行。例如：
+
+javascript
+Copy code
+const name = "World";
+const greeting = `Hello, ${name}!`;
+console.log(greeting);
+// 输出: Hello, World!
+
+在这个例子中，${name} 是一个表达式，它会被计算并嵌入到字符串中。
+使用反引号定义的模板字符串可以包含多行文本，而不需要使用特殊的换行符。
+
+
+
+
+
+
+

@@ -29,18 +29,20 @@ const PalletDashboard = ({ currentUser }) => {
     const unsub = onSnapshot(q, (querySnapshot) => {
       let palletsArrayFromFirebase = [];
       querySnapshot.forEach((doc) => {
-        console.log(doc.data());
         palletsArrayFromFirebase.push({ ...doc.data(), id: doc.id });
+        console.log(doc.data());
+        console.log(doc.id );
       });
       // using the useState from above
+      console.log(palletsArrayFromFirebase);
       setPallets(palletsArrayFromFirebase);
     });
     return () => unsub();
   }, [currentUser]);
 
-  async function handlePalletDelivered(pallet) {
-    await updateDoc(doc(db, "pallets", pallet.id), {
-      delivered: !pallet.delivered
+  async function handlePalletDelivered(docu) {
+    await updateDoc(doc(db, "pallets", docu.id), {
+      delivered: !docu.delivered
     });
   }
 
