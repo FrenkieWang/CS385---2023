@@ -14,6 +14,7 @@ function App() {
       if (item.id === id) {
         // If it's the object we want to update, create a new object with the updated value
         // The spread operator also works for individual object properties.
+        // 返回这个对象，在此基础上修改这个对象的value值
         return { ...item, value: item.value + newValue };
       }
       // If it's not the object we want to update, keep it as it is
