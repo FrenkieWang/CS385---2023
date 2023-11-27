@@ -56,6 +56,7 @@ const PalletDashboard = ({ currentUser }) => {
 
   return (
     <div className="container">
+      <p>Welcome, {currentUser.email}!</p>
       <AddPallet currentUser={currentUser} />
       <div className="AppClass">
         {pallets.length === 0 && (

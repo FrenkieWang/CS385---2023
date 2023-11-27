@@ -11,6 +11,7 @@ import { getFirestore, initializeFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// Check the Collection [Pallet2023]
 const firebaseConfig = {
   apiKey: "AIzaSyDEuBKX4iY3T4CEGmxAALzGl4AMLyOC2GI",
   authDomain: "pallet2023-c5df9.firebaseapp.com",
