@@ -8,7 +8,7 @@ function App(){
   const [isSelected, setIsSelected] = useState(false);
 
   function handleDateChange(theDate){
-    setIsSelected(false);
+    setIsSelected(true);
     setSelectedDate(theDate);
   }
 
