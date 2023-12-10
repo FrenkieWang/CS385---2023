@@ -9,11 +9,13 @@ function App() {
     manufacturer: "Dell"
   };
 
-const xObjectNames = xObject.map((x,i) => <li key={i}>{x}</li>);
+const xObjectNames = Object.getOwnPropertyNames(xObject);
+const xMap = xObjectNames.map((x,i) => <li key={i}>{x}</li>);
+
   return (
     <div className="App">
       <h1>Example 6</h1>
-      {xObjectNames}
+      {xMap}
     </div>
   );
 }

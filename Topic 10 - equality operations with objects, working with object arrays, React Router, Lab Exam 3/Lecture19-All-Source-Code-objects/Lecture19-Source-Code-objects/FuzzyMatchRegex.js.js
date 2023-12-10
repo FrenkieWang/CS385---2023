@@ -19,8 +19,8 @@ function App() {
     };
   }
 
-  let n = original.findIndex(fuzzyFindObject(search1));
-  let n1 = original.findIndex(fuzzyFindObject(search2));
+  let n = original.findIndex(fuzzyFindObject(search1)); // n = 1
+  let n1 = original.findIndex(fuzzyFindObject(search2)); // n = 4
 
   return (
     <>

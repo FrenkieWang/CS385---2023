@@ -15,4 +15,4 @@ function App() {
   );
 }
 export default App;
-
+// Object.is(a,b) 比较对象a和b，两个 值+内存 引用是否相同

@@ -20,8 +20,8 @@ function App() {
     };
   }
 
-  let n = original.findIndex(fuzzyFindObject(peter));
-  let n1 = original.findIndex(fuzzyFindObject(mary));
+  let n = original.findIndex(fuzzyFindObject(peter)); // n = 2
+  let n1 = original.findIndex(fuzzyFindObject(mary)); // n = 2
 
   return (
     <>

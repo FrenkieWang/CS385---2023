@@ -14,7 +14,7 @@ function App() {
         {students.map((x, index) => (
           <li key={index}>
             id: {x.id}, Year: {x.year}, Subjects = 
-            {x.subjects}
+            {JSON.stringify(x.subjects)}
           </li>
         ))}
       </ul>
