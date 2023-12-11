@@ -1,51 +1,84 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-
-import PageA from "./routes/PageA";
-import PageB from "./routes/PageB";
-import PageC from "./routes/PageC";
-
 function App() {
-  const [variable, setVariable] = useState(0);
-
-  function changeVar() {
-    setVariable(variable + 1);
+  const [sortChoice, setSortChoice] = useState(null);
+  const animals = [
+    { name: "Indian Rhino", mass: 3000, rank: 3 },
+    { name: "Asian Elephant", mass: 2400, rank: 2 },
+    { name: "Giraffe", mass: 1000, rank: 4 },
+    { name: "African Bush Elephant", mass: 5200, rank: 1 },
+    { name: "Hippopotamus", mass: 1210, rank: 6 },
+    { name: "Water Buffalo", mass: 1200, rank: 5 },
+  ];
+  // Event handler for the drop-down-list
+  function handleListChange(e) {
+    // We assign the value of the event
+    // The event is what is 'selected' from the list. This action
+    // is an event.
+    setSortChoice(e.target.value);
   }
-  return (
-    <Router>
-      <div>
-        <h1>Welcome to CS385 React Router!</h1>
-        <h2>Variable has the value {variable}</h2>
-        <button onClick={changeVar}>Increment Variable</button>
 
-        <p>Route Layer 1 - Home/A/B/C</p>
-        <ul>
-          <li>
-            <Link to="/">Home Page</Link>
-          </li>
-          <li>
-            <Link to="/a">Page A</Link>
-          </li>
-          <li>
-            <Link to="/b">Page B</Link>
-          </li>
-          <li>
-            <Link to="/c">Page C</Link>
-          </li>
-        </ul>
-        <Routes>
-          <Route path="/" element={<h2>This is Home Page</h2>} />
-          {/* Catch all route that begin with '/a' */}
-          <Route path="/a/*" element={<PageA theVar={variable} />} />
-          <Route path="/b" element={<PageB theVar={variable} />} />
-          <Route path="/c" element={<PageC theVar={variable} />} />
-        </Routes>
-      </div>
-    </Router>
+  function sortAnimalsName(dx, dy) {
+    let DX = dx.name.toUpperCase();
+    let DY = dy.name.toUpperCase();
+    if (DX > DY) return 1;
+    else if (DX < DY) return -1;
+    else return 0;
+  }
+  // for rank - we want smallest to largest values.
+  function sortAnimalsRank(dx, dy) {
+    if (dx.rank > dy.rank) return 1;
+    else if (dx.rank < dy.rank) return -1;
+    else return 0;
+  }
+
+  // for mass we want largest to smallest values
+  function sortAnimalsMass(dx, dy) {
+    if (dx.mass < dy.mass) return 1;
+    else if (dx.mass > dy.mass) return -1;
+    else return 0;
+  }
+
+  return (
+    <>
+      <h1>CS385 Animal Sorting Display</h1>
+      <form>
+        How to sort?:
+        <br />
+        <select onChange={handleListChange}>
+          <option>Choose....</option>
+          <option value="a">By Name (Asc)</option>
+          <option value="b">By Rank (Desc)</option>
+          <option value="c">By Mass (Desc)</option>
+        </select>
+      </form>
+      {sortChoice === null &&
+        animals.map((a, key) => (
+          <p key={key}>
+            {a.name}, Rank: {a.rank}, Mass: {a.mass}
+          </p>
+        ))}
+      {sortChoice === "a" &&
+        animals.sort(sortAnimalsName).map((a, key) => (
+          <p key={key}>
+            {a.name}, Rank: {a.rank}, Mass: {a.mass}
+          </p>
+        ))}
+      {sortChoice === "b" &&
+        animals.sort(sortAnimalsRank).map((a, key) => (
+          <p key={key}>
+            {a.name}, Rank: {a.rank}, Mass: {a.mass}
+          </p>
+        ))}
+
+      {sortChoice === "c" &&
+        animals.sort(sortAnimalsMass).map((a, key) => (
+          <p key={key}>
+            {a.name}, Rank: {a.rank}, Mass: {a.mass}
+          </p>
+        ))}
+    </>
   );
 }
 
 export default App;
 
-// Before you run the project, remember to install Router
-// [npm install react-router-dom]
