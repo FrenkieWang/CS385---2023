@@ -21,11 +21,11 @@ function App() {
           <li key={index}>
             {x.id}, Direction: {x.direction}, <br />
             Times:
-            <ol>
+            <ul>
               {x.times.map((t, tindex) => (
                 <li key={tindex}>{t}</li>
               ))}
-            </ol>
+            </ul>
           </li>
         ))}
       </ul>
